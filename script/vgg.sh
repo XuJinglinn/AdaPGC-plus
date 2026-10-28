@@ -1,0 +1,58 @@
+python run_adapgc.py \
+    --dataset 'vggsound' \
+    --json-root 'json_csv_files/vgg/' \
+    --label-csv 'json_csv_files/class_labels_indices_vgg.csv' \
+    --pretrain_path 'checkpoints/vgg_65.5.pth' \
+    --tta-method 'ADAPGC' \
+    --severity-start 5 \
+    --severity-end 5 \
+    --corruption-modality audio \
+    --batch-size 16 \
+    --gpu 4 \
+    --w-c 0.01 \
+    --w-g 1 \
+    --gamma 1 \
+    --alpha 0.95 \
+    --beta 0.5 \
+    --temp 1 \
+    --warmup-a 1000 \
+    --warmup-v 100
+
+python run_adapgc.py \
+    --dataset 'vggsound' \
+    --json-root 'json_csv_files/vgg/' \
+    --label-csv 'json_csv_files/class_labels_indices_vgg.csv' \
+    --pretrain_path 'checkpoints/vgg_65.5.pth' \
+    --tta-method 'ADAPGC' \
+    --severity-start 5 \
+    --severity-end 5 \
+    --corruption-modality video \
+    --batch-size 16 \
+    --gpu 4 \
+    --w-c 0.01 \
+    --w-g 1 \
+    --gamma 1 \
+    --alpha 0.95 \
+    --beta 0.5 \
+    --temp 1 \
+    --warmup-a 1000 \
+    --warmup-v 100
+
+python run_adapgc.py \
+    --dataset 'vggsound' \
+    --json-root 'json_csv_files/vgg/' \
+    --label-csv 'json_csv_files/class_labels_indices_vgg.csv' \
+    --pretrain_path 'checkpoints/vgg_65.5.pth' \
+    --tta-method 'ADAPGC' \
+    --severity-start 5 \
+    --severity-end 5 \
+    --corruption-modality missing \
+    --batch-size 16 \
+    --gpu 4 \
+    --w-c 0.01 \
+    --w-g 1 \
+    --gamma 1 \
+    --alpha 0.95 \
+    --temp 1 \
+    --warmup-a 1000 \
+    --warmup-v 1000

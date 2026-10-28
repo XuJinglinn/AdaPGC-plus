@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+/plot
+/checkpoints
+.DS_Store
+/logs
+/json_csv_files
+/exp_logs
+*.log
+/collected_results
+/json_csv_files*
+*.out
+*.tar.gz

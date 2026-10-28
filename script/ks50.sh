@@ -1,0 +1,59 @@
+python run_adapgc.py \
+    --dataset 'ks50' \
+    --json-root 'json_csv_files/ks50/' \
+    --label-csv 'json_csv_files/class_labels_indices_ks50.csv' \
+    --pretrain_path 'checkpoints/cav_mae_ks50.pth' \
+    --tta-method 'ADAPGC' \
+    --severity-start 5 \
+    --severity-end 5 \
+    --corruption-modality audio \
+    --batch-size 16 \
+    --gpu 0 \
+    --w-c 0.01 \
+    --w-g 1 \
+    --gamma 1 \
+    --alpha 0.95 \
+    --beta 0.5 \
+    --temp 1 \
+    --warmup-a 1000 \
+    --warmup-v 100
+
+python run_adapgc.py \
+    --dataset 'ks50' \
+    --json-root 'json_csv_files/ks50/' \
+    --label-csv 'json_csv_files/class_labels_indices_ks50.csv' \
+    --pretrain_path 'checkpoints/cav_mae_ks50.pth' \
+    --tta-method 'ADAPGC' \
+    --severity-start 5 \
+    --severity-end 5 \
+    --corruption-modality video \
+    --batch-size 16 \
+    --gpu 0 \
+    --w-c 0.01 \
+    --w-g 1 \
+    --gamma 1 \
+    --alpha 0.95 \
+    --beta 0.5 \
+    --temp 1 \
+    --warmup-a 1000 \
+    --warmup-v 100
+
+python run_adapgc.py \
+    --dataset 'ks50' \
+    --json-root 'json_csv_files/ks50/' \
+    --label-csv 'json_csv_files/class_labels_indices_ks50.csv' \
+    --pretrain_path 'checkpoints/cav_mae_ks50.pth' \
+    --tta-method 'ADAPGC' \
+    --severity-start 5 \
+    --severity-end 5 \
+    --corruption-modality missing \
+    --batch-size 16 \
+    --gpu 0 \
+    --w-c 0.01 \
+    --w-g 1 \
+    --gamma 0.1 \
+    --alpha 0.95 \
+    --beta 0.5 \
+    --temp 1 \
+    --warmup-a 1000 \
+    --warmup-v 100
